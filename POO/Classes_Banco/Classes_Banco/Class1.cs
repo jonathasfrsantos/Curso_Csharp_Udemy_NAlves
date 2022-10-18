@@ -1,11 +1,10 @@
 ﻿using System;
 
 
-namespace Classes_Banco
-{
+namespace Classes_Banco{
      class Conta{
 
-        public int Numero { get; private set; } 
+        public int Numero { get;  private set; } 
         public string Titular { get; set; }
         public double Saldo { get; private set; }
 
@@ -15,9 +14,9 @@ namespace Classes_Banco
         }
 
         public Conta (int numero, string titular, double saldo){
-            numero = Numero;
-            titular = Titular;
-            saldo = Saldo;
+            Numero = numero;
+            Titular = titular;  
+            Saldo = saldo;
 
         }
 
@@ -33,9 +32,14 @@ namespace Classes_Banco
             } 
             else
             {
-                Saldo -= valor;
+                Saldo -= valor + 5.0;
             }
           
+        }
+
+        public override string ToString()
+        {
+            return "Titular: " + Titular + " Numero da conta: " + Numero + " Saldo: " + Saldo.ToString("F2"); 
         }
 
 
